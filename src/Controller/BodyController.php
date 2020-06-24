@@ -16,4 +16,15 @@ class BodyController extends AbstractController
             'controller_name' => 'BodyController',
         ]);
     }
+
+    /**
+     * @Route("/body/1", name="body_clk")
+     */
+    public function clk()
+    {
+        return $this->render('body.html.twig', [
+            'controller_name' => 'BodyController',
+        ]);
+    }
+
 }
