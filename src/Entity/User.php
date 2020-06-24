@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -21,7 +22,10 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(message="le champ Email ne doit pas être vide !")
+     * @Assert\Email(message="Cette email n'est pas valide")
+     * @ORM\Column(type="string", length=80, unique=true)
+     * @Assert\Length(max=80, maxMessage="Le Nom ne doit pas dépasser {{ limit }} caractères")
      */
     private $email;
 
