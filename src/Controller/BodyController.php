@@ -12,7 +12,7 @@ class BodyController extends AbstractController
      */
     public function index()
     {
-        return $this->render('body/index.html.twig', [
+        return $this->render('body.html.twig', [
             'controller_name' => 'BodyController',
         ]);
     }
