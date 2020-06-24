@@ -20,10 +20,9 @@ class AnnoyanceZoneFixtures extends Fixture
         foreach (self::ANNOYANCESZONES as $key => $annoyanceZoneName) {
             $annoyanceZone = new AnnoyanceZone();
             $annoyanceZone->setName($annoyanceZoneName);
-            
+
             $manager->persist($annoyanceZone);
         }
         $manager->flush();
-        // TODO: Implement load() method.
     }
 }
