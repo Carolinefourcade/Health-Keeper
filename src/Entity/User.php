@@ -54,6 +54,11 @@ class User implements UserInterface
      */
     private $medicalRecords;
 
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $forname;
+
     public function __construct()
     {
         $this->medicalRecords = new ArrayCollection();
@@ -195,6 +200,18 @@ class User implements UserInterface
                 $medicalRecord->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getForname(): ?string
+    {
+        return $this->forname;
+    }
+
+    public function setForname(string $forname): self
+    {
+        $this->forname = $forname;
 
         return $this;
     }
