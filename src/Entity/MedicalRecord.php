@@ -18,12 +18,6 @@ class MedicalRecord
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="medicalRecords")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $user;
-
-    /**
      * @ORM\ManyToOne(targetEntity=AnnoyanceZone::class, inversedBy="medicalRecords")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -51,21 +45,15 @@ class MedicalRecord
      */
     private $details;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="medicalRecords")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
     }
 
     public function getAnnoyanceZone(): ?AnnoyanceZone
@@ -124,6 +112,18 @@ class MedicalRecord
     public function setDetails(?string $details): self
     {
         $this->details = $details;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
