@@ -4,7 +4,11 @@
 
 {% block body %}
     <h1>Enregistrement des données</h1>
-    {{ form(form) }}
-
-<button type="submit" class="btn" >enregistrer</button>
+    <h2>
+        Votre douleur est situé au niveau de : {{ zone.name }}
+    </h2>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn" >Enregistrer</button>
+    {{ form_end(form) }}
 {% endblock %}
