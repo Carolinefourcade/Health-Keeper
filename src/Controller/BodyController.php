@@ -22,10 +22,8 @@ class BodyController extends AbstractController
      */
     public function part()
     {
-        echo 'hello';
-        return $this->render('base.html.twig', [
-            'controller_name' => 'BodyController',
-        ]);
+
+        return $this->redirectToRoute('medical_record');
     }
 
 }
