@@ -54,7 +54,8 @@ class RegisterType extends AbstractType
                 'attr' =>array(
                     'placeholder' => 'Mot de passe',
                 ),
-                'label' => 'false',
+                'first_options' => ['label' => false, 'attr' => ['placeholder' => 'Mot de passe']],
+                'second_options' => ['label' => false, 'attr' => ['placeholder' => 'Mot de passe']],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer un mot de passe',
