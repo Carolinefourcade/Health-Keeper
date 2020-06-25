@@ -12,9 +12,9 @@ class MedicalRecordType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('details')
-            ->add('painIntensity')
-            ->add('annoyance')
+            ->add('details', null, ['label' => 'Détails à ajouter'])
+            ->add('painIntensity', null, ['label'=> 'Intensité'])
+            ->add('annoyance', null, ['label' => 'Type de douleur'])
         ;
     }
 
