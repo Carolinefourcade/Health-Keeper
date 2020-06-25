@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/medical", name="medical")
- *
+ * 
  */
 class MedicalRecordController extends AbstractController
 {
