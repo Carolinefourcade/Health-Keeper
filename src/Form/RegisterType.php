@@ -21,13 +21,22 @@ class RegisterType extends AbstractType
     {
         $builder
             ->add('forname', TextType::class, [
-                'label' => 'Prénom :'
+                'attr' =>array(
+                    'placeholder' => 'Prénom',
+                ),
+                'label' => false,
             ])
             ->add('name', TextType::class, [
-                'label' => 'Nom :'
+                'attr' =>array(
+                    'placeholder' => 'Nom',
+                ),
+                'label' => false,
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Email :'
+                'attr' =>array(
+                    'placeholder' => 'Adresse email',
+                ),
+                'label' => false,
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
@@ -42,8 +51,10 @@ class RegisterType extends AbstractType
             ])
             ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
-                'first_options' => ['label' => 'Mot de passe :'],
-                'second_options' => ['label' => 'Confirmer :'],
+                'attr' =>array(
+                    'placeholder' => 'Mot de passe',
+                ),
+                'label' => 'false',
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer un mot de passe',
@@ -54,6 +65,7 @@ class RegisterType extends AbstractType
                         'max' => 30,
                         'maxMessage' => 'Votre mot de passe doit faire {{ limit }} au maximum'
                     ]),
+
                 ],
             ])
         ;
