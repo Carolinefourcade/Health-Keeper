@@ -36,11 +36,12 @@ class BodyController extends AbstractController
         $medicalRecord->setCreatedAt(new \DateTime());
         $formMedical = $this->createForm(MedicalRecordType::class, $medicalRecord);
         $formMedical->handleRequest($request);
-        dump($medicalRecord);
         if ($formMedical->isSubmitted() && $formMedical->isValid()) {
             $entityManager->persist($medicalRecord);
             $entityManager->flush();
             //TODO Add flash messsage and redirect to route avec un recap de toutes les douleurs par exemple
+            return $this->redirectToRoute('medical_record_show', [
+                'id' => $medicalRecord->getId()]);
         }
 
         return $this->render('medical/index.html.twig', [
