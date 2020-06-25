@@ -11,10 +11,10 @@ class AnnoyanceZoneFixtures extends Fixture
 {
     const ANNOYANCESZONES = [
         'tete',
-        'epaules',
+        'epaule',
         'torse',
         'bras',
-        'mains',
+        'main',
         'ventre',
         'jambe',
     ];
