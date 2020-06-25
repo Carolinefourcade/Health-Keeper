@@ -1,3 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
 {{ form_start(register) }}
 
     {{ form_row(register.forname) }}
@@ -10,3 +13,7 @@
     <button type="submit" class="btn btn-primary align-self-end">Créer mon compte</button>
 </div>
 {{ form_end(register) }}
+
+<div class="container p-3 my-3 bg-primary text-white">oui</div>
+
+{% endblock %}
