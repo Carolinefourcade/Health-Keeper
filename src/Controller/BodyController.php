@@ -16,4 +16,16 @@ class BodyController extends AbstractController
             'controller_name' => 'BodyController',
         ]);
     }
+
+    /**
+     * @Route("/body/form", name="body_part")
+     */
+    public function part()
+    {
+        echo 'hello';
+        return $this->render('base.html.twig', [
+            'controller_name' => 'BodyController',
+        ]);
+    }
+
 }
