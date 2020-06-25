@@ -3,10 +3,14 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+    Voici vos récapitulatifs
+    {% for medical_record in records |slice(1) %}
+
+        <h1>{{ medical_record.user.name }} {{ medical_record.user.forname }}</h1>
+    {% endfor %}
     {% for medical_record in records %}
-    <p>{{ medical_record.user.name }} {{ medical_record.user.forname }}</p>
     <p>{{ medical_record.annoyancezone.name }}</p>
     <p>{{ medical_record.annoyance.name }}</p>
-    <p> {{ medical_record.details}}</p>
+    <p>{{ medical_record.details}}</p>
     {% endfor %}
 {% endblock %}
