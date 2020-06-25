@@ -22,11 +22,13 @@ class MedicalType extends AbstractType
            ])
            ->add('annoyance', EntityType::class, [
                'class'         => Annoyance::class,
-               'choice_label' => 'name'
+               'choice_label' => 'name',
+               'label' => 'Ressentis'
            ])
            ->add('painIntensity', EntityType::class, [
                'class'         => PainIntensity::class,
-               'choice_label' => 'level'
+               'choice_label' => 'level',
+               'label' => 'intensité'
            ]);
     }
 
