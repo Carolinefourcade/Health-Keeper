@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -33,7 +34,7 @@ class RegisterType extends AbstractType
                 'label' => false,
             ])
             ->add('email', EmailType::class, [
-                'attr' =>array(
+                'attr' => array(
                     'placeholder' => 'Adresse email',
                 ),
                 'label' => false,
@@ -49,26 +50,23 @@ class RegisterType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('plainPassword', RepeatedType::class, [
-                'type' => PasswordType::class,
-                'attr' =>array(
-                    'placeholder' => 'Mot de passe',
-                ),
-                'first_options' => ['label' => false, 'attr' => ['placeholder' => 'Mot de passe']],
-                'second_options' => ['label' => false, 'attr' => ['placeholder' => 'Mot de passe']],
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe',
-                    ]),
-                    new Length([
-                        'min' => 3,
-                        'minMessage' => 'Votre mot de passe doit faire au moins {{ limit }} caractères',
-                        'max' => 30,
-                        'maxMessage' => 'Votre mot de passe doit faire {{ limit }} au maximum'
-                    ]),
-
-                ],
-            ])
+            ->add('plainPassword', PasswordType::class, [
+                    'attr' => array(
+                        'placeholder' => 'Entrez votre mot de passe',
+                    ),
+                    'label' => false,
+                    'constraints' => [
+                        new NotBlank([
+                            'message' => 'Veuillez entrer un mot de passe',
+                        ]),
+                        new Length([
+                            'min' => 3,
+                            'minMessage' => 'Votre mot de passe doit faire au moins {{ limit }} caractères',
+                            'max' => 30,
+                            'maxMessage' => 'Votre mot de passe doit faire {{ limit }} au maximum'
+                        ]),
+                    ]]
+            );
         ;
     }
 
