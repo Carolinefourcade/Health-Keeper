@@ -18,11 +18,12 @@ class BodyController extends AbstractController
     }
 
     /**
-     * @Route("/body/1", name="body_clk")
+     * @Route("/body/form", name="body_part")
      */
-    public function clk()
+    public function part()
     {
-        return $this->render('body.html.twig', [
+        echo 'hello';
+        return $this->render('base.html.twig', [
             'controller_name' => 'BodyController',
         ]);
     }
