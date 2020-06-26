@@ -3,14 +3,31 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-    Voici vos récapitulatifs
-    {% for medical_record in records |slice(1) %}
+    <h1>Voici vos récapitulatifs</h1>
 
-        <h1>{{ medical_record.user.name }} {{ medical_record.user.forname }}</h1>
-    {% endfor %}
+<h2>{{ records[0].user.forname }} {{ records[0].user.name }} </h2>
+
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Zone concernée</th>
+                <th scope="col">Type de douleur</th>
+                <th scope="col">Détails</th>
+                <th scope="col">Intensité</th>
+            </tr>
+            </thead>
+            <tbody>
     {% for medical_record in records %}
-    <p>{{ medical_record.annoyancezone.name }}</p>
-    <p>{{ medical_record.annoyance.name }}</p>
-    <p>{{ medical_record.details}}</p>
-    {% endfor %}
+            <tr>
+                <th scope="row">{{ medical_record.annoyancezone.name }}</th>
+                <td>{{ medical_record.annoyance.name }}</td>
+                <td>{{ medical_record.details}}</td>
+                <td>{{ medical_record.painintensity.level }}</td>
+            </tr>
+
+            </tbody>
+        {% endfor %}
+        </table>
+
 {% endblock %}

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2735773f-4d63-4167-bce5-bc945f1d8989" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BodyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BodyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medical_record/show_all.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medical_record/show_all.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
